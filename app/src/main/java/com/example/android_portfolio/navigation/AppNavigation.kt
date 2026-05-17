@@ -1,13 +1,18 @@
 package com.example.android_portfolio.navigation
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.*
 
 import com.example.android_portfolio.screens.HomeScreen
+import com.example.android_portfolio.screens.LessonsScreen
+import com.example.android_portfolio.screens.PracticeScreen
+import com.example.android_portfolio.screens.practice.RecipesScreen
+import com.example.android_portfolio.screens.practice.mockRecipeSections
 
 @Composable
 fun AppNavigation() {
-
+    Log.d("AppNavigation", "Initializing AppNavigation")
     val navController = rememberNavController()
 
     NavHost(
@@ -20,14 +25,21 @@ fun AppNavigation() {
         }
 
         // Category hubs
-        composable(route = "lesson_hub") {
-            // LessonScreen(navController)
+        composable(route = "lessons_hub") {
+             LessonsScreen(navController)
         }
         composable(route = "practice_hub") {
-            // PracticeScreen(navController)
+             PracticeScreen(navController)
         }
 
-        // indiv pages
+        // individual pages
+        composable(route = "recipe_ui") {
+            RecipesScreen(
+                sections = mockRecipeSections,
+                onBackClick = { navController.popBackStack() },
+                onMenuClick = { /* Handle menu */ }
+            )
+        }
 
     }
 }
