@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.android_portfolio.navigation.AppNavigation
 import com.example.android_portfolio.ui.practice.ScaffoldPractice01
 import com.example.android_portfolio.ui.theme.AndroidPortfolioTheme
 
@@ -17,12 +18,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AndroidPortfolioTheme {
-                ScaffoldPractice01()
+                // ScaffoldPractice01()
+                AppNavigation()
             }
         }
     }
 }
 
+// composable for testing
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -35,6 +38,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     AndroidPortfolioTheme {
-        Greeting("Android")
+        // Greeting("Android")
+        AppNavigation()
     }
 }
