@@ -72,6 +72,11 @@ fun RecipesScreen(
     Scaffold(
         topBar = {
             TopAppBar(
+                navigationIcon = {
+                    IconButton(onClick = onBackClick) {
+                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                    }
+                },
                 title = {
                     Text(
                         text = "Recipes",
@@ -79,11 +84,6 @@ fun RecipesScreen(
                             fontWeight = FontWeight.Normal
                         )
                     )
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBackClick) {
-                        Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                    }
                 },
                 actions = {
                     IconButton(onClick = onMenuClick) {
