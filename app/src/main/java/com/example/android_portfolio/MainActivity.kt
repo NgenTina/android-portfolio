@@ -18,7 +18,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AndroidPortfolioTheme {
-                // ScaffoldPractice01()
                 AppNavigation()
             }
         }

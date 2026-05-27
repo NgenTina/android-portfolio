@@ -28,6 +28,9 @@ fun HomeScreen(navController: NavController){
 
     Scaffold(
         content = { innerPadding ->
+
+            // Text()
+
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
