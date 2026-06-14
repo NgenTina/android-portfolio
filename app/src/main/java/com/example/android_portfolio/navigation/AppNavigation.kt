@@ -7,6 +7,7 @@ import androidx.navigation.compose.*
 import com.example.android_portfolio.screens.HomeScreen
 import com.example.android_portfolio.screens.LessonsScreen
 import com.example.android_portfolio.screens.PracticeScreen
+import com.example.android_portfolio.screens.practice.DateTimePickerScreen
 import com.example.android_portfolio.screens.practice.RecipesScreen
 import com.example.android_portfolio.screens.practice.mockRecipeSections
 
@@ -39,6 +40,10 @@ fun AppNavigation() {
                 onBackClick = { navController.popBackStack() },
                 onMenuClick = { /* Handle menu */ }
             )
+        }
+
+        composable(route = "date_picker_ui") {
+            DateTimePickerScreen()
         }
 
     }
