@@ -5,10 +5,16 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,16 +23,33 @@ import androidx.navigation.NavController
 
 import com.example.android_portfolio.model.MenuItem
 
+
+data class HomeMenuItem(
+    override val title: String,
+    override val route: String
+) : MenuItem
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavController){
     Log.d("HomeScreen", "Rendering HomeScreen")
     // list of screens
     val menuList = listOf(
-        MenuItem("Lessons", "lessons_hub"),
-        MenuItem("Practice", "practice_hub")
+        HomeMenuItem("Lessons", "lessons_hub"),
+        HomeMenuItem("Practice", "practice_hub")
     )
 
     Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Lessons List") },
+                navigationIcon = {
+                    IconButton( onClick = { navController.popBackStack() }) {
+                        Icon( Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Black" )
+                    }
+                }
+            )
+        },
         content = { innerPadding ->
 
             // Text()
@@ -59,5 +82,4 @@ fun HomeScreen(navController: NavController){
             }
         }
     )
-
 }
