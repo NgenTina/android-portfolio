@@ -7,6 +7,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Schedule
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -124,7 +127,13 @@ fun DateTimePickerScreen() {
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },
             confirmButton = {
-                TextButton(onClick = { showDatePicker = false }) {
+                TextButton(
+                    onClick = { showDatePicker = false },
+                    colors = ButtonDefaults.textButtonColors(
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
+                    )
+                ) {
                     Text("OK")
                 }
             },
@@ -143,10 +152,16 @@ fun DateTimePickerScreen() {
 
     /* ── Time Picker Dialog ── */
     if (showTimePicker) {
-        DatePickerDialog(
+        AlertDialog(
             onDismissRequest = { showTimePicker = false },
             confirmButton = {
-                TextButton(onClick = { showTimePicker = false }) {
+                TextButton(
+                    onClick = { showTimePicker = false },
+                    colors = ButtonDefaults.textButtonColors(
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
+                    )
+                ) {
                     Text("OK")
                 }
             },
@@ -154,9 +169,10 @@ fun DateTimePickerScreen() {
                 TextButton(onClick = { showTimePicker = false }) {
                     Text("Cancel")
                 }
+            },
+            text = {
+                TimePicker(state = timePickerState)
             }
-        ) {
-            TimePicker(state = timePickerState)
-        }
+        )
     }
 }
