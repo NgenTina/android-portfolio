@@ -21,20 +21,14 @@ fun AppNavigation() {
         startDestination = "home"
     ) {
         // main screen
-        composable(route = "home") {
-             HomeScreen(navController)
-        }
+        composable(route = Screen.Home.route) { HomeScreen(navController) }
 
         // Category hubs
-        composable(route = "lessons_hub") {
-             LessonsScreen(navController)
-        }
-        composable(route = "practice_hub") {
-             PracticeScreen(navController)
-        }
+        composable(route = Screen.LessonsHub.route) { LessonsScreen(navController) }
+        composable(route = Screen.PracticeHub.route) { PracticeScreen(navController) }
 
         // individual pages
-        composable(route = "recipe_ui") {
+        composable(route = Screen.Recipes.route) {
             RecipesScreen(
                 sections = mockRecipeSections,
                 onBackClick = { navController.popBackStack() },
@@ -42,9 +36,7 @@ fun AppNavigation() {
             )
         }
 
-        composable(route = "date_picker_ui") {
-            DateTimePickerScreen()
-        }
+        composable(route = Screen.DateTimePicker.route) { DateTimePickerScreen() }
 
     }
 }
