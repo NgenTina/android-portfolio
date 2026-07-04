@@ -7,6 +7,7 @@ import androidx.navigation.compose.*
 import com.example.android_portfolio.screens.HomeScreen
 import com.example.android_portfolio.screens.LessonsScreen
 import com.example.android_portfolio.screens.PracticeScreen
+import com.example.android_portfolio.screens.practice.CoffeeBottomSheetScreen
 import com.example.android_portfolio.screens.practice.DateTimePickerScreen
 import com.example.android_portfolio.screens.practice.RecipesScreen
 import com.example.android_portfolio.screens.practice.mockRecipeSections
@@ -38,5 +39,6 @@ fun AppNavigation() {
 
         composable(route = Screen.DateTimePicker.route) { DateTimePickerScreen() }
 
+        composable (route = Screen.CoffeeBottomSheet.route) { CoffeeBottomSheetScreen() }
     }
 }

@@ -37,6 +37,7 @@ fun PracticeScreen(navController: NavController) {
     val practiceList = listOf(
         SimpleMenuItem("Recipes Practice", "recipe_ui"),
         SimpleMenuItem("Date Picker", "date_picker_ui"),
+        SimpleMenuItem("Coffee Bottom Sheet", "coffee_bottom_sheet"),
     )
 
     Scaffold(

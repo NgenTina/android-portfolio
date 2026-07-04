@@ -23,4 +23,6 @@ sealed class Screen(val route: String) {
     // ── Practice ──
     object Recipes : Screen("recipe_ui")
     object DateTimePicker : Screen("date_picker_ui")
+
+    object CoffeeBottomSheet : Screen("coffee_bottom_sheet")
 }
