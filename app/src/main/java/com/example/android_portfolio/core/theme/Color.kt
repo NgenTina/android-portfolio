@@ -1,4 +1,4 @@
-package com.example.android_portfolio.ui.theme
+package com.example.android_portfolio.core.theme
 
 import androidx.compose.ui.graphics.Color
 
