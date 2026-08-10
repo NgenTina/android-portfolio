@@ -1,4 +1,4 @@
-package com.example.android_portfolio.ui.features.lessons
+package com.example.android_portfolio.feature.features
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -9,13 +9,13 @@ import com.example.android_portfolio.navigation.LessonDetailRoute
 import com.example.android_portfolio.navigation.LessonListRoute
 import com.example.android_portfolio.navigation.LessonsGraph
 
-fun NavGraphBuilder.lessonsGraph(
+fun NavGraphBuilder.featureGraph(
     navController: NavController
 ) {
     navigation<LessonsGraph>(startDestination = LessonListRoute) {
         composable<LessonListRoute> {
-            LessonsScreen(
-                onLessonClick = { id ->
+            FeatureListScreen(
+                onFeatureClick = { id ->
                     navController.navigate(LessonDetailRoute(lessonId = id))
                 }
             )
@@ -23,14 +23,12 @@ fun NavGraphBuilder.lessonsGraph(
         
         composable<LessonDetailRoute> { backStackEntry ->
             val args = backStackEntry.toRoute<LessonDetailRoute>()
-            // For now, just show a placeholder or the detail screen
-            LessonDetailScreen(lessonId = args.lessonId)
+            FeatureDetailScreen(featureId = args.lessonId)
         }
     }
 }
 
-// Temporary placeholder for Detail Screen
 @androidx.compose.runtime.Composable
-fun LessonDetailScreen(lessonId: String) {
-    androidx.compose.material3.Text(text = "Lesson Detail: $lessonId")
+fun FeatureDetailScreen(featureId: String) {
+    androidx.compose.material3.Text(text = "Feature Detail: $featureId")
 }

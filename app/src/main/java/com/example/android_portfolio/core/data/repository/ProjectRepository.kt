@@ -1,32 +1,32 @@
-package com.example.android_portfolio.data.repository
+package com.example.android_portfolio.core.data.repository
 
-import com.example.android_portfolio.data.models.Lesson
-import com.example.android_portfolio.data.models.PracticeItem
+import com.example.android_portfolio.core.model.Feature
+import com.example.android_portfolio.core.model.MiniApp
 
 object ProjectRepository {
-    fun getLessons(): List<Lesson> = listOf(
-        Lesson(
+    fun getFeatures(): List<Feature> = listOf(
+        Feature(
             id = "lesson_06",
             title = "Layouts and Basic UI",
             description = "Learning about Rows, Columns, and Boxes in Jetpack Compose.",
             category = "UI Basics",
             date = "2024-03-01",
-            lessonNumber = 6,
-            homeworkCompleted = true
+            featureNumber = 6,
+            isCompleted = true
         ),
-        Lesson(
+        Feature(
             id = "lesson_07",
             title = "Navigation in Compose",
             description = "Implementing type-safe navigation and passing arguments.",
             category = "Navigation",
             date = "2024-03-15",
-            lessonNumber = 7,
-            homeworkCompleted = false
+            featureNumber = 7,
+            isCompleted = false
         )
     )
 
-    fun getPracticeItems(): List<PracticeItem> = listOf(
-        PracticeItem(
+    fun getMiniApps(): List<MiniApp> = listOf(
+        MiniApp(
             id = "coffee_shop",
             title = "Coffee Shop UI",
             description = "A multi-screen UI for a fictional coffee shop app.",
@@ -34,7 +34,7 @@ object ProjectRepository {
             date = "2024-04-01",
             projectType = "Full UI Design"
         ),
-        PracticeItem(
+        MiniApp(
             id = "login_flow",
             title = "Firebase Login Flow",
             description = "Complete authentication flow with email/password and social login.",
@@ -44,6 +44,6 @@ object ProjectRepository {
         )
     )
 
-    fun getLessonById(id: String): Lesson? = getLessons().find { it.id == id }
-    fun getPracticeItemById(id: String): PracticeItem? = getPracticeItems().find { it.id == id }
+    fun getFeatureById(id: String): Feature? = getFeatures().find { it.id == id }
+    fun getMiniAppById(id: String): MiniApp? = getMiniApps().find { it.id == id }
 }

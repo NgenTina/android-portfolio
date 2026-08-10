@@ -1,4 +1,4 @@
-package com.example.android_portfolio.ui.components
+package com.example.android_portfolio.core.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -7,11 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.android_portfolio.data.models.ProjectItem
+import com.example.android_portfolio.core.model.PortfolioItem
 
 @Composable
 fun ProjectCard(
-    item: ProjectItem,
+    item: PortfolioItem,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {

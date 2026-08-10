@@ -1,4 +1,4 @@
-package com.example.android_portfolio.ui.features.lessons
+package com.example.android_portfolio.feature.practice
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -6,23 +6,23 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
-import com.example.android_portfolio.data.repository.ProjectRepository
-import com.example.android_portfolio.ui.components.ProjectCard
+import com.example.android_portfolio.core.data.repository.ProjectRepository
+import com.example.android_portfolio.core.ui.components.ProjectCard
 
 @Composable
-fun LessonsScreen(
-    onLessonClick: (String) -> Unit
+fun PracticeListScreen(
+    onItemClick: (String) -> Unit
 ) {
-    val lessons = ProjectRepository.getLessons()
+    val items = ProjectRepository.getMiniApps()
 
     LazyColumn(
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        items(lessons) { lesson ->
+        items(items) { miniApp ->
             ProjectCard(
-                item = lesson,
-                onClick = { onLessonClick(lesson.id) }
+                item = miniApp,
+                onClick = { onItemClick(miniApp.id) }
             )
         }
     }

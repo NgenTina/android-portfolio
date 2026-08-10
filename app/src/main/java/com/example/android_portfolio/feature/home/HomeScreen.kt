@@ -1,4 +1,4 @@
-package com.example.android_portfolio.ui.features.home
+package com.example.android_portfolio.feature.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme

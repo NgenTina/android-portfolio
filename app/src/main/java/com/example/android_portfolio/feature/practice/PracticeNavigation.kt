@@ -1,4 +1,4 @@
-package com.example.android_portfolio.ui.features.practice
+package com.example.android_portfolio.feature.practice
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -21,13 +21,12 @@ fun NavGraphBuilder.practiceGraph(navController: NavController){
 
         composable<PracticeDetailRoute> { backStackEntry ->
             val args = backStackEntry.toRoute<PracticeDetailRoute>()
-            PracticeDetailScreen(itemId = args.itemId)
+            MiniAppDetailScreen(itemId = args.itemId)
         }
     }
 }
 
-// Temporary placeholder for Detail Screen
 @androidx.compose.runtime.Composable
-fun PracticeDetailScreen(itemId: String) {
-    androidx.compose.material3.Text(text = "Practice Detail: $itemId")
+fun MiniAppDetailScreen(itemId: String) {
+    androidx.compose.material3.Text(text = "Mini App Detail: $itemId")
 }

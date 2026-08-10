@@ -28,10 +28,10 @@ import com.example.android_portfolio.navigation.HomeGraph
 import com.example.android_portfolio.navigation.HomeRoute
 import com.example.android_portfolio.navigation.LessonsGraph
 import com.example.android_portfolio.navigation.PracticeGraph
-import com.example.android_portfolio.ui.features.home.HomeScreen
-import com.example.android_portfolio.ui.features.lessons.lessonsGraph
-import com.example.android_portfolio.ui.features.practice.practiceGraph
-import com.example.android_portfolio.ui.theme.PortfolioTheme
+import com.example.android_portfolio.feature.home.HomeScreen
+import com.example.android_portfolio.feature.features.featureGraph
+import com.example.android_portfolio.feature.practice.practiceGraph
+import com.example.android_portfolio.core.ui.theme.PortfolioTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +51,9 @@ fun MainApp() {
     
     val items = listOf(
         BottomNavItem("Home", HomeGraph, Icons.Default.Home),
-        BottomNavItem("Lessons", LessonsGraph, Icons.Default.List),
-        BottomNavItem("Practice", PracticeGraph, Icons.Default.Star)
+        BottomNavItem("Features", LessonsGraph, Icons.Default.List),
+        BottomNavItem("Practice", PracticeGraph, Icons.Default.Star),
+        BottomNavItem("Practice", PracticeGraph, Icons.Default.Star),
     )
 
     Scaffold(
@@ -88,7 +89,7 @@ fun MainApp() {
             composable<HomeGraph> {
                 HomeScreen()
             }
-            lessonsGraph(navController)
+            featureGraph(navController)
             practiceGraph(navController)
         }
     }

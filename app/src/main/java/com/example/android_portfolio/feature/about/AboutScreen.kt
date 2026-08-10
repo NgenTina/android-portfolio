@@ -1,4 +1,4 @@
-package com.example.android_portfolio.ui.features.profile
+package com.example.android_portfolio.feature.about
 
 import android.R
 import androidx.compose.foundation.background
@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 
 @Composable
-fun ProfileCardScreen() {
+fun AboutScreen() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
