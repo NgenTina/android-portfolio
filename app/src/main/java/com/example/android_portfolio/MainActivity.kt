@@ -25,11 +25,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.android_portfolio.navigation.HomeGraph
-import com.example.android_portfolio.navigation.HomeRoute
 import com.example.android_portfolio.navigation.LessonsGraph
 import com.example.android_portfolio.navigation.PracticeGraph
 import com.example.android_portfolio.feature.home.HomeScreen
-import com.example.android_portfolio.feature.features.featureGraph
+import com.example.android_portfolio.feature.ingredients.featureGraph
 import com.example.android_portfolio.feature.practice.practiceGraph
 import com.example.android_portfolio.core.ui.theme.PortfolioTheme
 

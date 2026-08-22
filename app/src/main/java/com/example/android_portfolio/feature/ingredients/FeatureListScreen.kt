@@ -1,4 +1,4 @@
-package com.example.android_portfolio.feature.features
+package com.example.android_portfolio.feature.ingredients
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
