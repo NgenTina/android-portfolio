@@ -1,4 +1,4 @@
-package com.example.android_portfolio.feature.practice
+package com.example.android_portfolio.features.practice
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

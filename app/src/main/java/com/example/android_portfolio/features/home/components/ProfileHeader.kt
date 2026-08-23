@@ -1,4 +1,4 @@
-package com.example.android_portfolio.feature.home.components
+package com.example.android_portfolio.features.home.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column

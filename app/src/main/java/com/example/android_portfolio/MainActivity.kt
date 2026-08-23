@@ -27,9 +27,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.android_portfolio.navigation.HomeGraph
 import com.example.android_portfolio.navigation.LessonsGraph
 import com.example.android_portfolio.navigation.PracticeGraph
-import com.example.android_portfolio.feature.home.HomeScreen
-import com.example.android_portfolio.feature.ingredients.featureGraph
-import com.example.android_portfolio.feature.practice.practiceGraph
+import com.example.android_portfolio.features.home.HomeScreen
+import com.example.android_portfolio.features.ingredients.featureGraph
+import com.example.android_portfolio.features.practice.practiceGraph
 import com.example.android_portfolio.core.ui.theme.PortfolioTheme
 
 class MainActivity : ComponentActivity() {

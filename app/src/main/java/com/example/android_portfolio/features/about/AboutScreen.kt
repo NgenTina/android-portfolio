@@ -1,4 +1,4 @@
-package com.example.android_portfolio.feature.about
+package com.example.android_portfolio.features.about
 
 import android.R
 import androidx.compose.foundation.background
