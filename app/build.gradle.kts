@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.android_portfolio"
+    namespace = "com.example.androidPortfolio"
     compileSdk = 35
 
     defaultConfig {
