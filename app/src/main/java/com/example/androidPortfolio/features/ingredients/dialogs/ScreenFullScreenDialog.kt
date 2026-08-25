@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -30,9 +29,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,7 +43,7 @@ fun ScreenFullScreenDialog(
     title: String,
     // onBack: () -> Unit,
 ) {
-    var showDialog by remember { mutableStateOf(true) }
+    var showDialog by remember { mutableStateOf(value = true) }
 
     val context = LocalContext.current
 
@@ -114,32 +111,27 @@ fun ScreenFullScreenDialog(
                             modifier = Modifier.fillMaxSize(),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            Row (
-                                modifier = Modifier.weight(1f)
-                            ){
-                                Row(
-                                    modifier = Modifier
-                                        .height(48.dp)
-                                        .fillMaxWidth(),
-                                    verticalAlignment = Alignment.CenterVertically
-                                ) {
-                                    IconButton(
-                                        onClick = {}
-                                    ) {
-                                        Icon(
-                                            modifier = Modifier.size(48.dp),
-                                            painter = painterResource(R.drawable.ic_outline_close),
-                                            contentDescription = "Close",
-                                            tint = colorResource(R.color.black)
-                                        )
-                                    }
-
-                                    Text("Full Screen Dialog Title")
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(48.dp)
+                                    .padding(horizontal = 8.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                IconButton(onClick = { showDialog = false }) {
+                                    Icon(
+                                        painter = painterResource(id = R.drawable.ic_outline_close),
+                                        contentDescription = "Close"
+                                    )
                                 }
 
-                                TextButton(
-                                    onClick = {}
-                                ) {
+                                Text(
+                                    text = "Full Screen Dialog Title",
+                                    modifier = Modifier.weight(1f),
+                                    style = MaterialTheme.typography.titleMedium
+                                )
+
+                                TextButton(onClick = { }) {
                                     Text("Share")
                                 }
                             }
