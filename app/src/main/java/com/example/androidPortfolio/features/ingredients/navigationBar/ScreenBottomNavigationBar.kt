@@ -39,7 +39,7 @@ data class BottomNavItem(
 @Composable
 fun ScreenBottomNavigationBar(
     onBack: () -> Unit,
-    title: String = "Menu",
+    title: String = "Bottom Navigation Bar",
 ) {
 
     val bottomNavItems = listOf(
@@ -114,7 +114,7 @@ fun ScreenBottomNavigationBarPreview() {
     PortfolioTheme {
         ScreenBottomNavigationBar(
             onBack = {},
-            title = "Menu Screen",
+            title = "Bottom Navigation Bar",
         )
     }
 }
