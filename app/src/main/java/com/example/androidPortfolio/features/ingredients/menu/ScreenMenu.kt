@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -38,31 +37,9 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ScreenMenu(
     onBack: () -> Unit,
+    dropdownItems: List<DropdownItem>,
     title: String = "Menu",
 ) {
-    val dropdownItems = listOf(
-        DropdownItem(
-            title = "Settings",
-            icon = Icons.Default.Settings,
-            onClick = {
-                println("Settings clicked")
-            }
-        ),
-        DropdownItem(
-            title = "Help",
-            icon = Icons.Default.Info,
-            onClick = {
-                println("Help clicked")
-            }
-        ),
-        DropdownItem(
-            title = "About",
-            icon = Icons.Default.Info,
-            onClick = {
-                println("About clicked")
-            }
-        )
-    )
     var selectedDropdownItem by remember { mutableStateOf(value = dropdownItems.first()) }
     var expanded by remember { mutableStateOf(value = false) }
 
@@ -175,11 +152,36 @@ data class DropdownItem(
     val onClick: () -> Unit
 )
 
+val dropdownItems = listOf(
+    DropdownItem(
+        title = "Settings",
+        icon = Icons.Default.Settings,
+        onClick = {
+            println("Settings clicked")
+        }
+    ),
+    DropdownItem(
+        title = "Help",
+        icon = Icons.Default.Info,
+        onClick = {
+            println("Help clicked")
+        }
+    ),
+    DropdownItem(
+        title = "About",
+        icon = Icons.Default.Info,
+        onClick = {
+            println("About clicked")
+        }
+    )
+)
+
 @Preview
 @Composable
 fun ScreenMenuPreview() {
     ScreenMenu(
         onBack = {},
-        title = "Menu Screen"
+        title = "Menu Screen",
+        dropdownItems = dropdownItems
     )
 }
