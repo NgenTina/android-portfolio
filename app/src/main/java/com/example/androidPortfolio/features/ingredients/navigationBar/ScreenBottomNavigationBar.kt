@@ -29,7 +29,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidPortfolio.core.ui.theme.PortfolioTheme
 
-
 data class BottomNavItem(
     val label: String,
     val icon: ImageVector
