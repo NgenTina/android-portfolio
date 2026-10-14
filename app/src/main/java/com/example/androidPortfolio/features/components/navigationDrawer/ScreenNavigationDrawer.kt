@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.navigationDrawer
+package com.example.androidPortfolio.features.components.navigationDrawer
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column

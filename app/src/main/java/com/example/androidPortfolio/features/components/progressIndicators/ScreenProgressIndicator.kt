@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.progressIndicators
+package com.example.androidPortfolio.features.components.progressIndicators
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

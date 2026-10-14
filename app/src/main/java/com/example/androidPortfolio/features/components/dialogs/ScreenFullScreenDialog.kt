@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.dialogs
+package com.example.androidPortfolio.features.components.dialogs
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

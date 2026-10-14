@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.dialogs
+package com.example.androidPortfolio.features.components.dialogs
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column

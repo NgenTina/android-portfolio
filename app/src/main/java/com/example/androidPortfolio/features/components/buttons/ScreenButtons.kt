@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.buttons
+package com.example.androidPortfolio.features.components.buttons
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

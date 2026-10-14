@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.menu
+package com.example.androidPortfolio.features.components.menu
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

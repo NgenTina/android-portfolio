@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.navigationBar
+package com.example.androidPortfolio.features.components.navigationBar
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

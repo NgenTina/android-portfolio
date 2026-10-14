@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.radios
+package com.example.androidPortfolio.features.components.radios
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

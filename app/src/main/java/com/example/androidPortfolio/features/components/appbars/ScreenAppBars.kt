@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.appbars
+package com.example.androidPortfolio.features.components.appbars
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

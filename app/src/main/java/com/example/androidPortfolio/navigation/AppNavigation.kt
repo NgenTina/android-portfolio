@@ -1,19 +1,62 @@
 package com.example.androidPortfolio.navigation
 
-import kotlinx.serialization.Serializable
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.androidPortfolio.features.about.AboutScreen
+import com.example.androidPortfolio.features.home.HomeScreen
+import com.example.androidPortfolio.features.components.componentsGraph
+import com.example.androidPortfolio.features.miniApps.miniAppsGraph
+import com.example.androidPortfolio.features.otherConcepts.otherConceptsGraph
 
-// Root Graphs
-@Serializable object HomeGraph
-@Serializable object PracticeGraph
-@Serializable object LessonsGraph
+@Composable
+fun AppNavigation() {
+    val navController = rememberNavController()
 
-// Home Screens
-@Serializable object HomeRoute
+    Scaffold(
+        bottomBar = {
+            PortfolioNavigationBar(
+                navController = navController
+            )
+        }
+    ) { innerPadding ->
 
-// Practice Screens
-@Serializable object PracticeListRoute
-@Serializable data class PracticeDetailRoute(val itemId: String)
+        NavHost(
+            navController = navController,
+            startDestination = Home,
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            // Home
+            composable<Home> {
+                HomeScreen(
+                    onAboutClick = {
+                        navController.navigate(About)
+                    },
+                    onMiniAppsClick = {
+                        navController.navigate(MiniApps)
+                    },
+                    onComponentsClick = {
+                        navController.navigate(Components)
+                    },
+                    onConceptsClick = {
+                        navController.navigate(OtherConcepts)
+                    }
+                )
+            }
 
-// Lesson Screens
-@Serializable object LessonListRoute
-@Serializable data class LessonDetailRoute(val lessonId: String)
+            // About
+            composable<About> {
+                AboutScreen()
+            }
+
+            // Feature graphs
+            componentsGraph(navController)
+            miniAppsGraph(navController)
+            otherConceptsGraph(navController)
+        }
+    }
+}

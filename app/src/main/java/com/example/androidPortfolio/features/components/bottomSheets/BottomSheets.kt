@@ -1,4 +1,4 @@
-package com.example.androidPortfolio.features.ingredients.bottomSheets
+package com.example.androidPortfolio.features.components.bottomSheets
 
 // TODO (review and implement later):
 // [ ] Fix bottom sheet not rendering: lift ModalBottomSheet out of Scaffold's content lambda
