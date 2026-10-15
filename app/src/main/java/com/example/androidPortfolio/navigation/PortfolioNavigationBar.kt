@@ -26,7 +26,6 @@ data class TopLevelDestination(
     val icon: ImageVector
 )
 
-
 private val topLevelDestinations = listOf(
 
     TopLevelDestination(
