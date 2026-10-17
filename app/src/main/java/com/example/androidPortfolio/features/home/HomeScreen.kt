@@ -18,12 +18,14 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun HomeScreen(
+    onMiniAppsClick: () -> Unit,
+    onComponentsClick: () -> Unit,
     onLibraryClick: () -> Unit
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
+            .padding(all = 24.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
         Spacer(modifier = Modifier.height(12.dp))
@@ -39,6 +41,12 @@ fun HomeScreen(
             style = MaterialTheme.typography.headlineLarge
         )
 
+        // Hero Cars
+        HeroProfileCard(
+            onViewMiniApps = onMiniAppsClick,
+            onViewComponents = onComponentsClick
+        )
+
         Text(
             text = "A collection of Android UI components built with Kotlin and Jetpack Compose.",
             style = MaterialTheme.typography.bodyLarge,
@@ -49,7 +57,7 @@ fun HomeScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Column(
-                modifier = Modifier.padding(20.dp),
+                modifier = Modifier.padding(all = 20.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Text(
@@ -84,6 +92,8 @@ fun HomeScreen(
 @Composable
 fun HomeScreenPreview() {
     HomeScreen(
-        onLibraryClick = { print("A Library is Clicked")}
+        onLibraryClick = { println("Library clicked") },
+        onMiniAppsClick = { println("Mini apps clicked") },
+        onComponentsClick = { println("Components clicked") }
     )
 }

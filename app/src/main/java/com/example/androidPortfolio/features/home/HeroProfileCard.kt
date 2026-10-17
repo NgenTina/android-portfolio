@@ -15,8 +15,12 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Verified
+import androidx.compose.material.icons.outlined.Apps
+import androidx.compose.material.icons.outlined.AttachEmail
 import androidx.compose.material.icons.outlined.Download
+import androidx.compose.material.icons.outlined.Extension
 import androidx.compose.material.icons.outlined.Mail
+import androidx.compose.material.icons.outlined.MailOutline
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -44,9 +48,8 @@ fun HeroProfileCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(size = 24.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
         Column(
             modifier = Modifier.padding(all = 24.dp)
@@ -61,29 +64,11 @@ fun HeroProfileCard(
                     shape = CircleShape
                 ) {
                     Text(
-                        text = "Android Specialist",
+                        text = "Android Novice",
                         color = MaterialTheme.colorScheme.onPrimaryContainer,
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
-                    )
-                }
-
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        imageVector = Icons.Default.Verified,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier.size(16.dp)
-                    )
-
-                    Spacer(modifier = Modifier.width(6.dp))
-
-                    Text(
-                        text = "Staff Track",
-                        color = MaterialTheme.colorScheme.secondary,
-                        style = MaterialTheme.typography.labelMedium,
-                        fontWeight = FontWeight.Bold
                     )
                 }
             }
@@ -94,7 +79,7 @@ fun HeroProfileCard(
                 text = "Tina Ngen",
                 style = MaterialTheme.typography.headlineLarge,
                 fontWeight = FontWeight.ExtraBold,
-                color = Color.Black
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -103,7 +88,7 @@ fun HeroProfileCard(
                 text = "Specializing in Jetpack Compose, Kotlin Multiplatform, and reactive Clean Architecture. Building buttery-smooth 120Hz experiences.",
                 style = MaterialTheme.typography.bodyLarge,
                 lineHeight = 26.sp,
-                color = Color.DarkGray
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             Spacer(modifier = Modifier.height(32.dp))
@@ -121,10 +106,10 @@ fun HeroProfileCard(
                         containerColor = MaterialTheme.colorScheme.primary
                     ),
                     contentPadding = PaddingValues(vertical = 16.dp),
-                    shape = RoundedCornerShape(12.dp)
+                    shape = RoundedCornerShape(size = 12.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Outlined.Download,
+                        imageVector = Icons.Outlined.Apps,
                         contentDescription = null,
                         modifier = Modifier.size(20.dp)
                     )
@@ -137,18 +122,18 @@ fun HeroProfileCard(
                     onClick = onViewComponents,
                     modifier = Modifier.weight(1f),
                     contentPadding = PaddingValues(vertical = 16.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    border = BorderStroke(1.dp, Color.LightGray)
+                    shape = RoundedCornerShape(size = 12.dp),
+                    border = BorderStroke(width = 1.dp, Color.LightGray)
                 ) {
                     Icon(
-                        imageVector = Icons.Outlined.Mail,
+                        imageVector = Icons.Outlined.Extension,
                         contentDescription = null,
                         tint = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.size(20.dp)
                     )
                     Spacer(modifier = Modifier.width(10.dp))
                     Text(
-                        "Components Library",
+                        "Components",
                         color = MaterialTheme.colorScheme.primary,
                         fontWeight = FontWeight.SemiBold
                     )
