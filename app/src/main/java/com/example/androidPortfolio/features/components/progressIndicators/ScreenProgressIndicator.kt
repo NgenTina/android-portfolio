@@ -39,8 +39,8 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenProgressIndicator(
-    title: String,
-    // onBack: () -> Unit,
+    title: String = "Progress Indicator",
+    onBack: () -> Unit = {},
 ) {
     val scope = rememberCoroutineScope()
     var progress by remember { mutableFloatStateOf(0.0f) }
@@ -53,7 +53,7 @@ fun ScreenProgressIndicator(
         topBar = {
             CenterAlignedTopAppBar(
                 navigationIcon = {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = onBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"

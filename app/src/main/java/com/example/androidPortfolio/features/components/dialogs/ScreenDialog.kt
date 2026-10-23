@@ -37,8 +37,8 @@ import com.example.androidPortfolio.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenDialog(
-    title: String,
-    // onBack: () -> Unit,
+    title: String = "Alert Dialog",
+    onBack: () -> Unit = {},
 ) {
     var showDialog by remember { mutableStateOf(false) }
 
@@ -55,7 +55,7 @@ fun ScreenDialog(
         topBar = {
             CenterAlignedTopAppBar(
                 navigationIcon = {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = onBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"

@@ -50,7 +50,8 @@ import com.example.androidPortfolio.core.ui.theme.Tertiary80
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenButtons(
-    title: String,
+    title: String = "Buttons",
+    onBackClick: () -> Unit = {},
 ) {
     var clickCount by remember { mutableIntStateOf(0) }
     var selectedSegment by remember { mutableIntStateOf(0) }
@@ -60,7 +61,7 @@ fun ScreenButtons(
         topBar = {
             CenterAlignedTopAppBar(
                 navigationIcon = {
-                    IconButton(onClick = { clickCount++ }) {
+                    IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"

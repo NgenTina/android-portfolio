@@ -48,7 +48,7 @@ fun ScreenMenu(
         topBar = {
             TopAppBar(
                 navigationIcon = {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = onBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"

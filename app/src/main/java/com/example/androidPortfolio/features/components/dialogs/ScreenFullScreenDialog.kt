@@ -40,8 +40,8 @@ import com.example.androidPortfolio.core.ui.theme.PortfolioTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenFullScreenDialog(
-    title: String,
-    // onBack: () -> Unit,
+    title: String = "Full Screen Dialog",
+    onBack: () -> Unit = {},
 ) {
     var showDialog by remember { mutableStateOf(value = true) }
 
@@ -53,7 +53,7 @@ fun ScreenFullScreenDialog(
         topBar = {
             CenterAlignedTopAppBar(
                 navigationIcon = {
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = onBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back"
