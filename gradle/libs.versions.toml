@@ -13,6 +13,8 @@ ksp = "2.0.21-1.0.28"
 kotlinxSerialization = "1.8.0"
 hilt = "2.51.1"
 
+compose-material-icons = "1.7.8"
+
 # Added missing library versions
 datastore = "1.1.1"
 coil = "2.7.0"
@@ -34,7 +36,7 @@ androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "u
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose-material-icons" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }

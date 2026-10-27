@@ -31,12 +31,6 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(12.dp))
 
         Text(
-            text = "ANDROID PORTFOLIO",
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
-
-        Text(
             text = "Build. Explore. Learn.",
             style = MaterialTheme.typography.headlineLarge
         )

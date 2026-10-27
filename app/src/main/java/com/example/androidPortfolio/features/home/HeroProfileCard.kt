@@ -48,7 +48,7 @@ fun HeroProfileCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(size = 24.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
+            containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
     ) {
         Column(
@@ -56,7 +56,7 @@ fun HeroProfileCard(
         ) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Surface(
