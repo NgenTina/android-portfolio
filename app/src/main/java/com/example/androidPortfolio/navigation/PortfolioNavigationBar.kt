@@ -1,5 +1,6 @@
 package com.example.androidPortfolio.navigation
 
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Apps
 import androidx.compose.material.icons.filled.Extension
@@ -7,12 +8,15 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -63,9 +67,24 @@ fun PortfolioNavigationBar(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    NavigationBar {
+    NavigationBar (
+        containerColor = MaterialTheme.colorScheme.secondaryContainer
+    ) {
         topLevelDestinations.forEach { destination ->
             NavigationBarItem(
+                icon = {
+                    Icon(
+                        modifier = Modifier.size(24.dp),
+                        imageVector = destination.icon,
+                        contentDescription = destination.label,
+                        tint = MaterialTheme.colorScheme.onSecondaryContainer
+                    )
+                },
+
+                label = {
+                    Text(destination.label)
+                },
+
                 selected = currentDestination
                     ?.hierarchy
                     ?.any {
@@ -87,17 +106,6 @@ fun PortfolioNavigationBar(
                         restoreState = true
                     }
                 },
-
-                icon = {
-                    Icon(
-                        imageVector = destination.icon,
-                        contentDescription = destination.label
-                    )
-                },
-
-                label = {
-                    Text(destination.label)
-                }
             )
         }
     }

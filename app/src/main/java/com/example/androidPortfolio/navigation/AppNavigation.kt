@@ -26,7 +26,8 @@ fun AppNavigation() {
         NavHost(
             navController = navController,
             startDestination = Home,
-            modifier = Modifier.padding(innerPadding)
+            modifier = Modifier
+                .padding(bottom = innerPadding.calculateBottomPadding())
         ) {
             // Home screen
             composable<Home> {
